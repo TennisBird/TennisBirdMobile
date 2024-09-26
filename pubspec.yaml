@@ -1,0 +1,28 @@
+name: tennis_bird_mobile
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  rive: 
+  splash: 
+    path: features/splash/
+  welcome:
+    path: features/welcome/
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.12
+  flutter_gen: 
+  melos: ^6.1.0
+
+flutter:
+  uses-material-design: true

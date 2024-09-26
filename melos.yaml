@@ -1,0 +1,7 @@
+name: tennis_bird_mobile
+
+packages:
+  - features/**
+  - core
+  - core_ui
+  - navigation
