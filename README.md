@@ -1,8 +1,7 @@
-# tennis_bird_mobile
+# Tennis Bird Application on [Android / IOS]
+## Описание проекта
 
-A new Flutter project.
-
-## Getting Started
+Tennis Bird - 
 
 This project is a starting point for a Flutter application.
 
