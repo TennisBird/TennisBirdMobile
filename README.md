@@ -1,16 +1,28 @@
-# tennis_bird_mobile
+# Tennis Bird Application on [Android / IOS]
+## Описание проекта
 
-A new Flutter project.
+Приложение с функционалом создания комманд, добавлением задач, отслеживания их статуса, планирования встреч команды. 
 
-## Getting Started
+## Основные функции
 
-This project is a starting point for a Flutter application.
+ **Создание и управление задачами**:
+   - Возможность создания задач с указанием названия, описания, приоритета, sp, автора.
+   - Изменение статуса задач.
+   - Назначением наблюдателей и исполнителей.
 
-A few resources to get you started if this is your first Flutter project:
+**Управление командами**:
+   - Создание команд и назначение членов команды.
+   - Возможность выставления ролей (например, "Разработчик", "Тестировщик").
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Стек используемых технологий
+- Flutter v3.24
+- Figma design file
+- Rive files
+- Lottie
+- Pub.dev packages (BloC, GetIt, GoogleFonts)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Прототипы страниц
+- https://www.figma.com/design/JPgDiqIkacUAtySnhXFA9m/TennisBird?node-id=0-1&t=EfGukbxJbWWzVF0F-1
+
+## API
+- Not deployed
