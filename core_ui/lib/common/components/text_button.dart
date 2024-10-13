@@ -1,9 +1,9 @@
 import 'package:core_ui/core_ui.dart';
 
-class WelcomeTextButton extends StatelessWidget {
+class FlowTextButton extends StatelessWidget {
   final void Function()? onPressed;
   final String text;
-  const WelcomeTextButton({
+  const FlowTextButton({
     super.key,
     required this.onPressed,
     required this.text,
@@ -26,7 +26,7 @@ class WelcomeTextButton extends StatelessWidget {
           color: Colors.white,
           fontFamily: 'Minecraft',
           fontSize: 24,
-          package: 'welcome',
+          package: 'core_ui',
         ),
       ),
     );

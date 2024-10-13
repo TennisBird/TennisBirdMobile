@@ -1,0 +1,40 @@
+name: login
+description: "Login screen"
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.5.1
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  rive: ^0.13.13
+  core:
+    path: ../../core
+  core_ui: 
+    path: ../../core_ui
+  navigation: 
+    path: ../../navigation
+  flutter_svg: ^2.0.10+1
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_gen: ^5.7.0
+  build_runner: ^2.4.12
+
+flutter_gen:
+  output: lib/util/
+
+flutter: 
+  assets:
+    - assets/images/svg/lock.svg
+    - assets/images/svg/user.svg
+  fonts:
+    - family: 'Minecraft'
+      fonts:
+        - asset: assets/fonts/minecraft.ttf

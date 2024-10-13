@@ -5,6 +5,7 @@ final class AppConstants {
 class Dimensions {
   static const double size_5 = 5.0;
   static const double size_10 = 10.0;
+  static const double size_16 = 16.0;
   static const double size_20 = 20.0;
   static const double size_30 = 30.0;
   static const double size_40 = 40.0;

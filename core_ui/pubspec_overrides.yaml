@@ -1,0 +1,16 @@
+# melos_managed_dependency_overrides: core,login,navigation,splash,welcome,register,home
+dependency_overrides:
+  core:
+    path: ..\\core
+  home:
+    path: ..\\features\\home
+  login:
+    path: ..\\features\\login
+  navigation:
+    path: ..\\navigation
+  register:
+    path: ..\\features\\register
+  splash:
+    path: ..\\features\\splash
+  welcome:
+    path: ..\\features\\welcome

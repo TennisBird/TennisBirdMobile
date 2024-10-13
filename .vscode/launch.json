@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "tennis_bird_mobile",
+            "name": "TennisBirdMobile",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "tennis_bird_mobile (profile mode)",
+            "name": "TennisBirdMobile (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "tennis_bird_mobile (release mode)",
+            "name": "TennisBirdMobile (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
@@ -28,22 +28,38 @@
             "type": "dart"
         },
         {
+            "name": "core (profile mode)",
+            "cwd": "core",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "core (release mode)",
+            "cwd": "core",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
             "name": "core_ui",
             "cwd": "core_ui",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "data",
-            "cwd": "data",
+            "name": "core_ui (profile mode)",
+            "cwd": "core_ui",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "flutterMode": "profile"
         },
         {
-            "name": "domain",
-            "cwd": "domain",
+            "name": "core_ui (release mode)",
+            "cwd": "core_ui",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "flutterMode": "release"
         },
         {
             "name": "navigation",
@@ -52,16 +68,78 @@
             "type": "dart"
         },
         {
+            "name": "navigation (profile mode)",
+            "cwd": "navigation",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "navigation (release mode)",
+            "cwd": "navigation",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
             "name": "home",
             "cwd": "features\\home",
             "request": "launch",
             "type": "dart"
         },
         {
+            "name": "home (profile mode)",
+            "cwd": "features\\home",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "home (release mode)",
+            "cwd": "features\\home",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "login",
+            "cwd": "features\\login",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "login (profile mode)",
+            "cwd": "features\\login",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "login (release mode)",
+            "cwd": "features\\login",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
             "name": "settings",
             "cwd": "features\\settings",
             "request": "launch",
             "type": "dart"
+        },
+        {
+            "name": "settings (profile mode)",
+            "cwd": "features\\settings",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "settings (release mode)",
+            "cwd": "features\\settings",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
         },
         {
             "name": "splash",
@@ -79,6 +157,26 @@
         {
             "name": "splash (release mode)",
             "cwd": "features\\splash",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "welcome",
+            "cwd": "features\\welcome",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "welcome (profile mode)",
+            "cwd": "features\\welcome",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "welcome (release mode)",
+            "cwd": "features\\welcome",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

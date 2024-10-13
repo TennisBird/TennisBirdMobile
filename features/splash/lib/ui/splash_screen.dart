@@ -1,10 +1,25 @@
 import 'dart:ui';
 
+import 'package:navigation/configs/route_util.dart';
+import 'package:navigation/navigation.dart';
 import 'package:rive/rive.dart';
 import 'package:splash/splash.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 5), () {
+      AppRouter.router.go(PAGES.welcome.screenPath);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
