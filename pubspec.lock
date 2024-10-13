@@ -214,6 +214,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.1"
+  convex_bottom_bar:
+    dependency: transitive
+    description:
+      name: convex_bottom_bar
+      sha256: ebf0f3deb1e8e99374d844fee7485d2980ec502dedfaad395c12118477933aef
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.0"
   core:
     dependency: transitive
     description:
@@ -329,6 +337,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
+  flutter_svg:
+    dependency: transitive
+    description:
+      name: flutter_svg
+      sha256: "7b4ca6cf3304575fe9c8ec64813c8d02ee41d2afe60bcfe0678bcb5375d596a2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.10+1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -355,6 +371,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
+  go_router:
+    dependency: transitive
+    description:
+      name: go_router
+      sha256: b4c1cce7eda99ff729bb69d10cd7555017a0665f66ca46ee574e6a03785b389d
+      url: "https://pub.dev"
+    source: hosted
+    version: "14.2.9"
   google_fonts:
     dependency: transitive
     description:
@@ -379,6 +403,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
+  home:
+    dependency: transitive
+    description:
+      path: "features/home"
+      relative: true
+    source: path
+    version: "0.0.1"
   http:
     dependency: transitive
     description:
@@ -483,6 +514,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  login:
+    dependency: transitive
+    description:
+      path: "features/login"
+      relative: true
+    source: path
+    version: "0.0.1"
   macros:
     dependency: transitive
     description:
@@ -539,6 +577,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
+  navigation:
+    dependency: "direct main"
+    description:
+      path: navigation
+      relative: true
+    source: path
+    version: "0.0.1"
   nested:
     dependency: transitive
     description:
@@ -715,6 +760,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.2"
+  register:
+    dependency: transitive
+    description:
+      path: "features/register"
+      relative: true
+    source: path
+    version: "0.0.1"
   rive:
     dependency: "direct main"
     description:
@@ -799,6 +851,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  svg_flutter:
+    dependency: transitive
+    description:
+      name: svg_flutter
+      sha256: "5d6b37ca069e5e0eaa987691dc61594674e687b5bec8fd9797877a5f331d43e1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   term_glyph:
     dependency: transitive
     description:
@@ -847,6 +907,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  vector_graphics:
+    dependency: transitive
+    description:
+      name: vector_graphics
+      sha256: "32c3c684e02f9bc0afb0ae0aa653337a2fe022e8ab064bcd7ffda27a74e288e3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.11+1"
   vector_graphics_codec:
     dependency: transitive
     description:

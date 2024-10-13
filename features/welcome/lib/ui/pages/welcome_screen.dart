@@ -1,5 +1,8 @@
 import 'dart:ui';
 
+import 'package:core_ui/common/components/text_button.dart';
+import 'package:navigation/configs/route_util.dart';
+import 'package:navigation/navigation.dart';
 import 'package:rive/rive.dart';
 import 'package:welcome/welcome.dart';
 
@@ -56,13 +59,18 @@ class WelcomeScreen extends StatelessWidget {
             child: Column(
               children: [
                 const Spacer(),
-                WelcomeTextButton(
-                    onPressed: () {}, text: WelcomeConstants.login),
+                FlowTextButton(
+                    onPressed: () {
+                      AppRouter.router.push(PAGES.login.screenPath);
+                    },
+                    text: WelcomeConstants.login),
                 const SizedBox(
                   height: Dimensions.size_20,
                 ),
-                WelcomeTextButton(
-                    onPressed: () {}, text: WelcomeConstants.getStarted),
+                FlowTextButton(
+                    onPressed: () {
+                      AppRouter.router.push(PAGES.register.screenPath);
+                    }, text: WelcomeConstants.getStarted),
                 const SizedBox(
                   height: Dimensions.size_150,
                 ),

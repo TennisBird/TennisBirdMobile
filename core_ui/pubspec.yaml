@@ -13,6 +13,8 @@ dependencies:
   splash:
     path: ../features/splash
   google_fonts: ^6.2.1
+  convex_bottom_bar: ^3.2.0
+  svg_flutter: 
 
 
 dev_dependencies:
@@ -22,7 +24,8 @@ dev_dependencies:
   flutter_gen:
   build_runner:
 
-flutter_gen: lib/codegen
+flutter_gen:
+  output: lib/util/
 
 flutter:
   uses-material-design: true

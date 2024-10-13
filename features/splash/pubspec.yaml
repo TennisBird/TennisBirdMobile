@@ -13,6 +13,8 @@ dependencies:
   rive: ^0.13.13
   core_ui: 
     path: ../../core_ui
+  navigation: 
+    path: ../../navigation
 
 dev_dependencies:
   flutter_test:

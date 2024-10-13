@@ -1,3 +1,4 @@
+import 'package:navigation/navigation.dart';
 import 'package:welcome/welcome.dart';
 
 void main() {
@@ -9,6 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: const WelcomeScreen());
+    return MaterialApp.router(
+      routeInformationParser: AppRouter.router.routeInformationParser,
+      routeInformationProvider: AppRouter.router.routeInformationProvider,
+      routerDelegate: AppRouter.router.routerDelegate,
+      debugShowCheckedModeBanner: false,
+    );
   }
 }

@@ -1,5 +1,5 @@
 name: tennis_bird_mobile
-description: "A new Flutter project."
+description: "Tennis bird mobile"
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -15,6 +15,8 @@ dependencies:
     path: features/splash/
   welcome:
     path: features/welcome/
+  navigation: 
+    path: navigation/
 
 dev_dependencies:
   flutter_test:
