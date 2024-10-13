@@ -1,3 +1,4 @@
+import 'package:error/ui/error_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home/ui/pages/home_page.dart';
 import 'package:login/login.dart';
@@ -53,6 +54,22 @@ class AppRouter {
         name: PAGES.home.screenName,
         pageBuilder: (context, state) => CustomTransitionPage(
           child: const HomePage(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: animation,
+              child: FadeIn(animation: animation, child: child),
+            );
+          },
+        ),
+      ),
+      GoRoute(
+        path: PAGES.error.screenPath,
+        name: PAGES.error.screenName,
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: ErrorPage(
+            errorMessage: "123",
+            onRetry: () {},
+          ),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(
               opacity: animation,

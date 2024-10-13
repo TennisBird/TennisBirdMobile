@@ -1,9 +1,11 @@
-# melos_managed_dependency_overrides: core,core_ui,login,navigation,splash,register,home
+# melos_managed_dependency_overrides: core,core_ui,login,navigation,splash,register,home,error
 dependency_overrides:
   core:
     path: ..\\..\\core
   core_ui:
     path: ..\\..\\core_ui
+  error:
+    path: ..\\error
   home:
     path: ..\\home
   login:

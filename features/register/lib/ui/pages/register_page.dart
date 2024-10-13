@@ -1,6 +1,8 @@
 import 'package:core_ui/common/components/text_button.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/gestures.dart';
+import 'package:navigation/configs/route_util.dart';
+import 'package:navigation/navigation.dart';
 import 'package:register/constants/register_text.dart';
 import 'package:register/ui/components/transparent_text_field.dart';
 import 'package:register/util/assets.gen.dart' as register_assets;
@@ -77,7 +79,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     icon: register_assets.Assets.images.svg.lock,
                   ),
                   const Spacer(),
-                  FlowTextButton(onPressed: () {}, text: 'Continue'),
+                  FlowTextButton(onPressed: () {
+                    AppRouter.router.go(PAGES.error.screenPath);
+                  }, text: 'Continue'),
                   const SizedBox(
                     height: Dimensions.size_20,
                   ),

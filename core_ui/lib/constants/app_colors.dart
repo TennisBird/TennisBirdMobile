@@ -10,4 +10,5 @@ class AppColors {
   static const Color text1GradColor = Color(0xFF94B805);
   static const Color text2GradColor = Color(0xFF303B02);
   static const Color backgroundColor = Color(0xFFDFFB73);
+  static const Color errorColor = Colors.red;
 }

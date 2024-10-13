@@ -1,7 +1,9 @@
-# melos_managed_dependency_overrides: core,login,navigation,splash,welcome,register,home
+# melos_managed_dependency_overrides: core,login,navigation,splash,welcome,register,home,error
 dependency_overrides:
   core:
     path: ..\\core
+  error:
+    path: ..\\features\\error
   home:
     path: ..\\features\\home
   login:

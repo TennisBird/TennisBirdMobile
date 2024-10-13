@@ -21,6 +21,8 @@ dependencies:
     path: ../features/register/
   home: 
     path: ../features/home/
+  error: 
+    path: ../features/error/
 
 dev_dependencies:
   flutter_test:
