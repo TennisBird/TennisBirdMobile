@@ -17,6 +17,10 @@ dependencies:
     path: features/welcome/
   navigation: 
     path: navigation/
+  data:
+    path: data/
+  domain: 
+    path: domain/
 
 dev_dependencies:
   flutter_test:

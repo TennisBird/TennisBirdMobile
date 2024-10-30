@@ -5,3 +5,5 @@ packages:
   - core
   - core_ui
   - navigation
+  - data
+  - domain

@@ -21,11 +21,11 @@ class _BottomNavbarState extends State<BottomNavbar> {
   Widget build(BuildContext context) {
     return ConvexAppBar(
       items: const [
-        TabItem(icon: Icons.home, title: 'Home'),
-        TabItem(icon: Icons.business, title: 'Business'),
-        TabItem(icon: Icons.notifications, title: 'Notifications'),
-        TabItem(icon: Icons.person, title: 'Profile'),
-        TabItem(icon: Icons.settings, title: 'Settings'),
+        TabItem(icon: Icons.home, title: ''),
+        TabItem(icon: Icons.calendar_month, title: ''),
+        TabItem(icon: Icons.notifications, title: ''),
+        TabItem(icon: Icons.person, title: ''),
+        TabItem(icon: Icons.settings, title: ''),
       ],
       initialActiveIndex: _selectedIndex,
       onTap: _onItemTapped,
