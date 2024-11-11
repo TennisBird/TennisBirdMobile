@@ -1,13 +1,13 @@
 import 'package:error/ui/error_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home/ui/pages/home_page.dart';
-import 'package:login/login.dart';
 import 'package:navigation/configs/route_util.dart';
 import 'package:navigation/constants/transitions/fade_in.dart';
 import 'package:navigation/constants/transitions/slide_up.dart';
 import 'package:register/register.dart';
 import 'package:splash/splash.dart';
-import 'package:welcome/ui/pages/welcome_screen.dart';
+import 'package:support_chat/ui/pages/global_chat_page.dart';
+import 'package:welcome/welcome.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -36,7 +36,11 @@ class AppRouter {
         name: PAGES.login.screenName,
         pageBuilder: (context, state) {
           return SlideUpTransitionPage(
-            child: const LoginPage(),
+            child: const /*LoginPage()*/ GlobalChatPage(
+                message: 'message',
+                time: 'time',
+                senderName: 'senderName',
+                isAdmin: true),
           );
         },
       ),
@@ -45,7 +49,10 @@ class AppRouter {
         name: PAGES.register.screenName,
         pageBuilder: (context, state) {
           return SlideUpTransitionPage(
-            child: const RegisterPage(),
+            child: BlocProvider(
+              create: (context) => RegisterBloc(),
+              child: const RegisterPage(),
+            ),
           );
         },
       ),

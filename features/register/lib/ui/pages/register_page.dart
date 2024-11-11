@@ -1,8 +1,10 @@
+import 'package:core/core.dart';
 import 'package:core_ui/common/components/text_button.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/gestures.dart';
 import 'package:navigation/configs/route_util.dart';
 import 'package:navigation/navigation.dart';
+import 'package:register/bloc/register_bloc.dart';
 import 'package:register/constants/register_text.dart';
 import 'package:register/ui/components/transparent_text_field.dart';
 import 'package:register/util/assets.gen.dart' as register_assets;
@@ -56,6 +58,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   TransparentTextField(
                     hintText: RegisterText.username,
                     icon: register_assets.Assets.images.svg.user,
+                    onChanged: (value) => context
+                        .read<RegisterBloc>()
+                        .add(RegisterUsernameChanged(value)),
                   ),
                   const SizedBox(
                     height: Dimensions.size_20,
@@ -63,6 +68,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   TransparentTextField(
                     hintText: RegisterText.email,
                     icon: register_assets.Assets.images.svg.mail,
+                    onChanged: (value) => context
+                        .read<RegisterBloc>()
+                        .add(RegisterEmailChanged(value)),
                   ),
                   const SizedBox(
                     height: Dimensions.size_20,
@@ -70,6 +78,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   TransparentTextField(
                     hintText: RegisterText.password,
                     icon: register_assets.Assets.images.svg.lock,
+                    onChanged: (value) => context
+                        .read<RegisterBloc>()
+                        .add(RegisterPasswordChanged(value)),
                   ),
                   const SizedBox(
                     height: Dimensions.size_20,
@@ -77,11 +88,25 @@ class _RegisterPageState extends State<RegisterPage> {
                   TransparentTextField(
                     hintText: RegisterText.confirm_password,
                     icon: register_assets.Assets.images.svg.lock,
+                    onChanged: (value) => context
+                        .read<RegisterBloc>()
+                        .add(RegisterConfirmPasswordChanged(value)),
                   ),
                   const Spacer(),
-                  FlowTextButton(onPressed: () {
-                    AppRouter.router.go(PAGES.error.screenPath);
-                  }, text: 'Continue'),
+                  BlocListener<RegisterBloc, RegisterState>(
+                    listener: (context, state) {
+                      if (state.isSuccess) {
+                        AppRouter.router.go(PAGES.home.screenPath);
+                      } else if (state.isError) {
+                        AppRouter.router.go(PAGES.error.screenPath);
+                      }
+                    },
+                    child: FlowTextButton(
+                        onPressed: () {
+                          context.read<RegisterBloc>().add(RegisterSubmitted());
+                        },
+                        text: 'Continue'),
+                  ),
                   const SizedBox(
                     height: Dimensions.size_20,
                   ),
@@ -105,10 +130,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               fontWeight: FontWeight.bold,
                               fontFamily: FontFamily.minecraft,
                               package: RegisterText.package),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              
-                            },
+                          recognizer: TapGestureRecognizer()..onTap = () {},
                         ),
                       ],
                     ),

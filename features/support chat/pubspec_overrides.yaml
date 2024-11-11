@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: core,core_ui,login,navigation,splash,register,home,error,support_chat
+# melos_managed_dependency_overrides: core,core_ui,error,home,login,navigation,register,splash,welcome
 dependency_overrides:
   core:
     path: ..\\..\\core
@@ -16,5 +16,5 @@ dependency_overrides:
     path: ..\\register
   splash:
     path: ..\\splash
-  support_chat:
-    path: ..\\support chat
+  welcome:
+    path: ..\\welcome

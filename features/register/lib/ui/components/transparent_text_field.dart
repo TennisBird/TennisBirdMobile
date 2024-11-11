@@ -5,13 +5,14 @@ class TransparentTextField extends StatelessWidget {
   final String hintText;
   final String icon;
   final bool obscureText;
+  final ValueChanged<String>? onChanged;
 
-  const TransparentTextField({
-    super.key,
-    required this.hintText,
-    required this.icon,
-    this.obscureText = false,
-  });
+  const TransparentTextField(
+      {super.key,
+      required this.hintText,
+      required this.icon,
+      this.obscureText = false,
+      this.onChanged});
 
   @override
   Widget build(BuildContext context) {

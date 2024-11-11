@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   rive: 
+  core: 
+    path: core/
   splash: 
     path: features/splash/
   welcome:

@@ -1,5 +1,5 @@
-name: register
-description: "Register screen"
+name: support_chat
+description: "Support chat page"
 version: 0.0.1
 publish_to: none
 
@@ -10,15 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  core:
-    path: ../../core
+  rive: ^0.13.13
   core_ui: 
     path: ../../core_ui
   navigation: 
     path: ../../navigation
-  flutter_svg: ^2.0.10+1
-  equatable: 
-  
 
 dev_dependencies:
   flutter_test:
@@ -28,10 +24,8 @@ dev_dependencies:
   build_runner: ^2.4.12
 
 flutter_gen:
-  output: lib/util/
+  output: lib/util/assets/
 
-flutter: 
-  assets:
-    - assets/images/svg/lock.svg
-    - assets/images/svg/user.svg
-    - assets/images/svg/mail.svg
+flutter:
+  assets: 
+    - assets/images/

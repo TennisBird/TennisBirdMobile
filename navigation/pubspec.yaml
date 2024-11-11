@@ -23,6 +23,8 @@ dependencies:
     path: ../features/home/
   error: 
     path: ../features/error/
+  support_chat: 
+    path: ../features/support chat/
 
 dev_dependencies:
   flutter_test:

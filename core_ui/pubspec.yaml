@@ -29,6 +29,8 @@ flutter_gen:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/png/tennisBird.png
   fonts:
     - family: 'Minecraft'
       fonts:
