@@ -20,10 +20,24 @@ class $AssetsPngGen {
   List<AssetGenImage> get values => [tennisBird];
 }
 
+class $AssetsRiveGen {
+  const $AssetsRiveGen();
+
+  /// File path: assets/rive/appbar.riv
+  String get appbar => 'packages/core_ui/assets/rive/appbar.riv';
+
+  /// File path: assets/rive/logo.riv
+  String get logo => 'packages/core_ui/assets/rive/logo.riv';
+
+  /// List of all assets
+  List<String> get values => [appbar, logo];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsPngGen png = $AssetsPngGen();
+  static const $AssetsRiveGen rive = $AssetsRiveGen();
 }
 
 class AssetGenImage {

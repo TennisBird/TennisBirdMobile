@@ -2,7 +2,6 @@ import 'package:core/core.dart';
 import 'package:core/utils/typedef.dart';
 import 'package:domain/domain.dart';
 import 'package:domain/repository/authentication/auth_repository.dart';
-import 'package:equatable/equatable.dart';
 
 class SignInUsecase extends FutureUseCaseWithParams<AuthUser, SignInParams> {
   final AuthRepository _repository;
@@ -11,22 +10,22 @@ class SignInUsecase extends FutureUseCaseWithParams<AuthUser, SignInParams> {
 
   @override
   ResultFuture<AuthUser> call(params) => _repository.signIn(
-      emailOrPassword: params.emailOrPassword, password: params.password);
+      emailOrLogin: params.emailOrLogin, password: params.password);
 }
 
 class SignInParams extends Equatable {
-  final String emailOrPassword;
+  final String emailOrLogin;
   final String password;
 
   const SignInParams({
-    required this.emailOrPassword,
+    required this.emailOrLogin,
     required this.password,
   });
 
   const SignInParams.empty()
-      : emailOrPassword = '',
+      : emailOrLogin = '',
         password = '';
 
   @override
-  List<Object> get props => [emailOrPassword, password];
+  List<Object> get props => [emailOrLogin, password];
 }

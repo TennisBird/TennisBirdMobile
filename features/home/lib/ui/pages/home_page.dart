@@ -16,8 +16,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   double _blurValue = 0.0;
+
+  void _onBottomSheetDragged(double delta) {
+    final newOffset = _scrollController.offset + delta;
+    _scrollController.jumpTo(
+      newOffset.clamp(0.0, _scrollController.position.maxScrollExtent),
+    );
+  }
 
   @override
   void initState() {
@@ -45,6 +52,13 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             child: Stack(
               children: [
+                Positioned.fill(
+                  child: Container(
+                    // height: MediaQuery.of(context).size.height,
+                    // width: MediaQuery.of(context).size.width,
+                    color: AppColors.backgroundColor,
+                  ),
+                ),
                 Positioned.fill(
                   child: Column(
                     children: List.generate(
@@ -77,7 +91,8 @@ class _HomePageState extends State<HomePage> {
                   child: SingleChildScrollView(
                     controller: _scrollController,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: Dimensions.size_16),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: Dimensions.size_16),
                       child: Column(
                         children: [
                           const SizedBox(
@@ -95,18 +110,63 @@ class _HomePageState extends State<HomePage> {
                           const SizedBox(
                             height: Dimensions.size_20,
                           ),
+                          _buildBlurringElement(
+                              HomeBottomSheet(
+                                onDrag: (delta) => _onBottomSheetDragged(-delta),
+                              ),
+                              3),
+                          const SizedBox(
+                            height: Dimensions.size_20,
+                          ),
                         ],
                       ),
                     ),
                   ),
                 ),
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: ClipRRect(
+                    borderRadius:
+                        const BorderRadius.vertical(top: Radius.circular(90.0)),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                      child: Container(
+                          height: 40, color: Colors.white.withOpacity(0.1)),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    color: Colors.transparent,
+                    child: const Padding(
+                      padding: EdgeInsets.only(bottom: 10.0),
+                      child: BottomNavbar(),
+                    ),
+                  ),
+                ),
+                // Positioned(
+                //   bottom: 0,
+                //   left: 0,
+                //   right: 0,
+                //   child: ClipRect(
+                //     child: BackdropFilter(
+                //       filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                //       child: Container(
+                //           height: 60, color: Colors.white.withOpacity(0.3)),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
-          const HomeBottomSheet(),
+          // const HomeBottomSheet(),
         ],
       ),
-      bottomNavigationBar: const BottomNavbar(),
     );
   }
 

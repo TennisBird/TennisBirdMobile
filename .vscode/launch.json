@@ -180,6 +180,12 @@
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
-        }
+        },
+        {
+            "name": "calendar",
+            "cwd": "features\\calendar",
+            "request": "launch",
+            "type": "dart"
+        },
     ]
 }

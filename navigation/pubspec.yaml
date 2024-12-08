@@ -25,6 +25,10 @@ dependencies:
     path: ../features/error/
   support_chat: 
     path: ../features/support chat/
+  calendar: 
+    path: ../features/calendar/
+  chats:
+    path: ../features/chats/
 
 dev_dependencies:
   flutter_test:

@@ -1,0 +1,37 @@
+name: chats
+description: "chats page"
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.5.1
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  swipe_to: ^1.0.6
+  auto_animated: ^3.2.0
+  aron_gradient_line: ^1.1.2
+  core_ui: 
+    path: ../../core_ui
+  core: 
+    path: ../../core
+  navigation:  
+    path: ../../navigation
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_gen:  
+  build_runner: 
+
+flutter_gen:
+  output: lib/util/
+
+flutter: 
+  assets:
+    - assets/jpg/images.jpg
+    - assets/png/tennisBird.png

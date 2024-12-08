@@ -1,9 +1,17 @@
-# melos_managed_dependency_overrides: core,core_ui,login,navigation,register,splash,welcome,error,support_chat
+# melos_managed_dependency_overrides: core,core_ui,login,navigation,register,splash,welcome,error,support_chat,data,domain,calendar,chats
 dependency_overrides:
+  calendar:
+    path: ..\\calendar
+  chats:
+    path: ..\\chats
   core:
     path: ..\\..\\core
   core_ui:
     path: ..\\..\\core_ui
+  data:
+    path: ..\\..\\data
+  domain:
+    path: ..\\..\\domain
   error:
     path: ..\\error
   login:

@@ -1,33 +1,48 @@
 import 'package:home/home.dart';
 
 class HomeBottomSheet extends StatefulWidget {
-  const HomeBottomSheet({super.key});
+  final ValueChanged<double> onDrag;
+  const HomeBottomSheet({super.key, required this.onDrag});
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomeBottomSheetState createState() => _HomeBottomSheetState();
 }
 
 class _HomeBottomSheetState extends State<HomeBottomSheet> {
   bool _isExpanded = false;
-  double _height = 100;
-  double _maxHeight = 300;
+  double _height = 150;
+  late double _maxHeight;
 
   void _toggleSheet() {
     setState(() {
       _isExpanded = !_isExpanded;
-      _height = _isExpanded ? _maxHeight : 100;
+      _height = _isExpanded ? _maxHeight : 150;
     });
   }
 
   void _onVerticalDragUpdate(DragUpdateDetails details) {
     setState(() {
       _height -= details.delta.dy;
-      if (_height < 100) {
-        _height = 100;
+      if (_height < 150) {
+        _height = 150;
       } else if (_height > _maxHeight) {
         _height = _maxHeight;
       }
-      _isExpanded = _height > 100;
+      widget.onDrag(details.delta.dy);
+    });
+  }
+
+  void _onVerticalDragEnd(DragEndDetails details) {
+    const double dragThreshold = 50.0;
+    setState(() {
+      if (_height > 150 + dragThreshold) {
+        _isExpanded = true;
+        _height = _maxHeight;
+      } else {
+        _isExpanded = false;
+        _height = 150;
+      }
     });
   }
 
@@ -36,6 +51,7 @@ class _HomeBottomSheetState extends State<HomeBottomSheet> {
     _maxHeight = MediaQuery.of(context).size.height * 0.7;
     return GestureDetector(
       onVerticalDragUpdate: _onVerticalDragUpdate,
+      onVerticalDragEnd: _onVerticalDragEnd,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         height: _height,
@@ -82,7 +98,15 @@ class _HomeBottomSheetState extends State<HomeBottomSheet> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Events for you', style: MainText.shellText, textAlign: TextAlign.start,),
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: Dimensions.size_10),
+                      child: Text(
+                        'Events for you',
+                        style: MainText.shellText,
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
                   ],
                 ),
               ),

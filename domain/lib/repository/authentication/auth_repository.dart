@@ -7,7 +7,7 @@ abstract class AuthRepository {
   Stream<AuthUser> getCurrentUser();
 
   ResultFuture<AuthUser> signIn({
-    required String emailOrPassword,
+    required String emailOrLogin,
     required String password,
   });
 

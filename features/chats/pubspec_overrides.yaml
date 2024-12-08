@@ -1,0 +1,28 @@
+# melos_managed_dependency_overrides: calendar,core,core_ui,data,domain,error,home,login,navigation,register,splash,support_chat,welcome
+dependency_overrides:
+  calendar:
+    path: ..\\calendar
+  core:
+    path: ..\\..\\core
+  core_ui:
+    path: ..\\..\\core_ui
+  data:
+    path: ..\\..\\data
+  domain:
+    path: ..\\..\\domain
+  error:
+    path: ..\\error
+  home:
+    path: ..\\home
+  login:
+    path: ..\\login
+  navigation:
+    path: ..\\..\\navigation
+  register:
+    path: ..\\register
+  splash:
+    path: ..\\splash
+  support_chat:
+    path: ..\\support chat
+  welcome:
+    path: ..\\welcome

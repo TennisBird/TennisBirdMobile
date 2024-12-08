@@ -7,3 +7,7 @@ packages:
   - navigation
   - data
   - domain
+
+scripts:
+  analyze:
+    exec: dart analyze .

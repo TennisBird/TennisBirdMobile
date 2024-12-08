@@ -7,6 +7,11 @@ environment:
   sdk: ^3.5.1
 
 dependencies:
+  dio:
+  flutter_secure_storage:
+  get_it:
+  internet_connection_checker_plus: ^2.5.2
+  easy_localization: ^3.0.7
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8

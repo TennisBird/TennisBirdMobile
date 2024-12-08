@@ -13,6 +13,10 @@ dependencies:
   equatable: ^2.0.5
   core: 
     path: ../core
+  data:
+    path: ../data
+  flutter_secure_storage: ^9.2.2
+  dartz:
 
 dev_dependencies:
   flutter_test:

@@ -1,0 +1,31 @@
+name: calendar
+description: "calendar page"
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.5.1
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  table_calendar: 3.1.2
+  core_ui: 
+    path: ../../core_ui
+  core: 
+    path: ../../core
+  navigation:  
+    path: ../../navigation
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_gen:  
+  build_runner: 
+
+flutter_gen:
+  output: lib/util/
+

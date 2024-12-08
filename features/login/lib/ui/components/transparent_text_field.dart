@@ -5,18 +5,21 @@ class TransparentTextField extends StatelessWidget {
   final String hintText;
   final String icon;
   final bool obscureText;
+  final TextEditingController textEditingController;
 
   const TransparentTextField({
     super.key,
     required this.hintText,
     required this.icon,
     this.obscureText = false,
+    required this.textEditingController,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       obscureText: obscureText,
+      controller: textEditingController,
       style: const TextStyle(
           color: AppColors.dark,
           fontSize: 16,
