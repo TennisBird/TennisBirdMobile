@@ -10,7 +10,8 @@ import 'package:welcome/welcome.dart';
 
 
 void main() async {
-  AppLocalization.init();
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   runApp(AppLocalization.localWrapper(const MyApp()));
 }
 

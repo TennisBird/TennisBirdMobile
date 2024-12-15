@@ -29,6 +29,8 @@ dependencies:
     path: ../features/calendar/
   chats:
     path: ../features/chats/
+  domain:
+    path: ../domain/
 
 dev_dependencies:
   flutter_test:

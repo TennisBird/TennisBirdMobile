@@ -76,8 +76,20 @@ class AuthRepositoryImpl implements AuthRepository {
     required String username,
     required String email,
     required String password,
-  }) {
-    // Sign up functionality can be implemented later as per your requirement
-    throw UnimplementedError();
+  }) async {
+    try {
+      await _authRemoteDatasource.signUp(
+        username: username,
+        email: email,
+        password: password,
+      );
+      log('User signed up successfully: $username');
+      return const Right(null);
+    } catch (e) {
+      log('Failed to sign up: $e');
+      return Future.value(Left(
+        ServerFailure(message: 'Failed to sign up: $e', statusCode: e.hashCode),
+      ));
+    }
   }
 }

@@ -1,12 +1,14 @@
-import 'package:chats/chats.dart';
+import 'package:domain/repository/authentication/auth_repository.dart';
 import 'package:error/ui/error_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home/ui/pages/home_page.dart';
+import 'package:login/bloc/login_bloc.dart';
 import 'package:login/ui/pages/login_page.dart';
 import 'package:navigation/configs/route_util.dart';
 import 'package:navigation/constants/transitions/fade_in.dart';
 import 'package:navigation/constants/transitions/slide_up.dart';
 import 'package:register/register.dart';
+import 'package:splash/ui/splash_screen.dart';
 import 'package:welcome/welcome.dart';
 
 class AppRouter {
@@ -16,7 +18,7 @@ class AppRouter {
       GoRoute(
         path: PAGES.splash.screenPath,
         name: PAGES.splash.screenName,
-        builder: (context, state) => const /*SplashScreen()*/ChatsPage(),
+        builder: (context, state) => const SplashScreen(),
       ),
       GoRoute(
         path: PAGES.welcome.screenPath,
@@ -36,7 +38,12 @@ class AppRouter {
         name: PAGES.login.screenName,
         pageBuilder: (context, state) {
           return SlideUpTransitionPage(
-            child: const LoginPage()
+            child: BlocProvider(
+              create: (context) => LoginBloc(
+                RepositoryProvider.of<AuthRepository>(context),
+              ),
+              child: const LoginPage(),
+            ),
           );
         },
       ),
@@ -46,7 +53,9 @@ class AppRouter {
         pageBuilder: (context, state) {
           return SlideUpTransitionPage(
             child: BlocProvider(
-              create: (context) => RegisterBloc(),
+              create: (context) => RegisterBloc(
+                authRepository: RepositoryProvider.of<AuthRepository>(context),
+              ),
               child: const RegisterPage(),
             ),
           );

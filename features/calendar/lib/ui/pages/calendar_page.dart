@@ -1,4 +1,5 @@
 import 'package:core_ui/core_ui.dart';
+import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class CalendarPage extends StatefulWidget {
@@ -13,17 +14,25 @@ class _CalendarPageState extends State<CalendarPage> {
   DateTime _focusedDay = DateTime.now();
 
   final List<String> _tasks = [
-    'Задание 1: Купить продукты',
-    'Задание 2: Завершить проект',
-    'Задание 3: Посетить спортзал',
+    'Go to gym bro...',
+    'Finish project',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text(
+          "Today's Tasks",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, fontFamily: "Minecraft", package: "core_ui"),
+        ),
+        backgroundColor: const Color(0xFFEDF9D7),
+        elevation: 0,
+      ),
+      backgroundColor: const Color(0xFFEDF9D7),
       body: Column(
         children: [
+          const SizedBox(height: 16),
           TableCalendar(
             firstDay: DateTime.utc(2020, 1, 1),
             lastDay: DateTime.utc(2030, 12, 31),
@@ -35,19 +44,35 @@ class _CalendarPageState extends State<CalendarPage> {
                 _focusedDay = focusedDay;
               });
             },
-            calendarFormat: CalendarFormat.month,
+            calendarFormat: CalendarFormat.week,
             headerStyle: const HeaderStyle(
               formatButtonVisible: false,
               titleCentered: true,
+              titleTextStyle: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                color: Colors.black,
+                fontFamily: "Minecraft", package: "core_ui"
+              ),
             ),
             calendarStyle: const CalendarStyle(
               todayDecoration: BoxDecoration(
-                color: AppColors.dark,
+                color: Colors.black,
                 shape: BoxShape.circle,
               ),
               selectedDecoration: BoxDecoration(
-                color: AppColors.backgroundColor,
+                color: Color(0xFFB7D88E),
                 shape: BoxShape.circle,
+              ),
+              todayTextStyle: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontFamily: "Minecraft", package: "core_ui"
+              ),
+              defaultTextStyle: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+                fontFamily: "Minecraft", package: "core_ui"
               ),
             ),
           ),
@@ -72,8 +97,17 @@ class _CalendarPageState extends State<CalendarPage> {
                     width: 60,
                     margin: const EdgeInsets.symmetric(horizontal: 8),
                     decoration: BoxDecoration(
-                      color: isSelected ? AppColors.text1GradColor : Colors.grey[200],
+                      color: isSelected
+                          ? const Color(0xFF000000)
+                          : const Color(0xFFF3F3F3),
                       borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        if (isSelected)
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            blurRadius: 5,
+                          ),
+                      ],
                     ),
                     alignment: Alignment.center,
                     child: Column(
@@ -82,24 +116,30 @@ class _CalendarPageState extends State<CalendarPage> {
                         Text(
                           '${day.day}',
                           style: TextStyle(
-                            color: isSelected ? Colors.white : Colors.black,
+                            color: isSelected
+                                ? Colors.white
+                                : const Color(0xFF000000),
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
+                            fontFamily: "Minecraft", package: "core_ui"
                           ),
                         ),
                         Text(
                           [
                             'Mon',
                             'Tue',
-                            'Wen',
+                            'Wed',
                             'Thu',
                             'Fri',
                             'Sat',
                             'Sun'
                           ][day.weekday - 1],
                           style: TextStyle(
-                            color: isSelected ? Colors.white : Colors.black,
+                            color: isSelected
+                                ? Colors.white
+                                : const Color(0xFF000000),
                             fontSize: 14,
+                            fontFamily: "Minecraft", package: "core_ui"
                           ),
                         ),
                       ],
@@ -110,16 +150,60 @@ class _CalendarPageState extends State<CalendarPage> {
             ),
           ),
           const SizedBox(height: 16),
+          // Список задач
           Expanded(
             child: ListView.builder(
               itemCount: _tasks.length,
               itemBuilder: (context, index) {
-                return Card(
+                return Container(
                   margin:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: ListTile(
-                    title: Text(_tasks[index]),
-                    leading: const Icon(Icons.check_box_outline_blank),
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        blurRadius: 4,
+                        offset: const Offset(2, 2),
+                      )
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.check_box_outlined,
+                          color: Color(0xFF94C973)),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Text(
+                          _tasks[index],
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.black,
+                            fontFamily: "Minecraft", package: "core_ui"
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 4, horizontal: 8),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF94C973),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Text(
+                          'TODO',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Minecraft", package: "core_ui"
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 );
               },

@@ -1,5 +1,6 @@
+import 'dart:developer';
+
 import 'package:core/core.dart';
-import 'package:core_ui/common/components/text_button.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/gestures.dart';
 import 'package:navigation/configs/route_util.dart';
@@ -55,43 +56,61 @@ class _RegisterPageState extends State<RegisterPage> {
                   const SizedBox(
                     height: Dimensions.size_30,
                   ),
-                  TransparentTextField(
-                    hintText: RegisterText.username,
-                    icon: register_assets.Assets.images.svg.user,
-                    onChanged: (value) => context
-                        .read<RegisterBloc>()
-                        .add(RegisterUsernameChanged(value)),
+                  BlocBuilder<RegisterBloc, RegisterState>(
+                    builder: (context, state) {
+                      return TransparentTextField(
+                        hintText: RegisterText.username,
+                        icon: register_assets.Assets.images.svg.user,
+                        onChanged: (value) => context
+                            .read<RegisterBloc>()
+                            .add(RegisterUsernameChanged(value)),
+                      );
+                    },
                   ),
                   const SizedBox(
                     height: Dimensions.size_20,
                   ),
-                  TransparentTextField(
-                    hintText: RegisterText.email,
-                    icon: register_assets.Assets.images.svg.mail,
-                    onChanged: (value) => context
-                        .read<RegisterBloc>()
-                        .add(RegisterEmailChanged(value)),
+                  BlocBuilder<RegisterBloc, RegisterState>(
+                    builder: (context, state) {
+                      return TransparentTextField(
+                        hintText: RegisterText.email,
+                        icon: register_assets.Assets.images.svg.mail,
+                        onChanged: (value) => context
+                            .read<RegisterBloc>()
+                            .add(RegisterEmailChanged(value)),
+                      );
+                    },
                   ),
                   const SizedBox(
                     height: Dimensions.size_20,
                   ),
-                  TransparentTextField(
-                    hintText: RegisterText.password,
-                    icon: register_assets.Assets.images.svg.lock,
-                    onChanged: (value) => context
-                        .read<RegisterBloc>()
-                        .add(RegisterPasswordChanged(value)),
+                  BlocBuilder<RegisterBloc, RegisterState>(
+                    builder: (context, state) {
+                      return TransparentTextField(
+                        hintText: RegisterText.password,
+                        icon: register_assets.Assets.images.svg.lock,
+                        onChanged: (value) => context
+                            .read<RegisterBloc>()
+                            .add(RegisterPasswordChanged(value)),
+                      );
+                    },
                   ),
                   const SizedBox(
                     height: Dimensions.size_20,
                   ),
-                  TransparentTextField(
-                    hintText: RegisterText.confirm_password,
-                    icon: register_assets.Assets.images.svg.lock,
-                    onChanged: (value) => context
-                        .read<RegisterBloc>()
-                        .add(RegisterConfirmPasswordChanged(value)),
-                  ),
+                  Builder(builder: (context) {
+                    return BlocBuilder<RegisterBloc, RegisterState>(
+                      builder: (context, state) {
+                        return TransparentTextField(
+                          hintText: RegisterText.confirm_password,
+                          icon: register_assets.Assets.images.svg.lock,
+                          onChanged: (value) => context
+                              .read<RegisterBloc>()
+                              .add(RegisterConfirmPasswordChanged(value)),
+                        );
+                      },
+                    );
+                  }),
                   const Spacer(),
                   BlocListener<RegisterBloc, RegisterState>(
                     listener: (context, state) {
@@ -103,6 +122,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     },
                     child: FlowTextButton(
                         onPressed: () {
+                          log('Button tapped reg');
                           context.read<RegisterBloc>().add(RegisterSubmitted());
                         },
                         text: 'Continue'),
